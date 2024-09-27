@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjeta de Perfil con Flotabilidad</title>
+    <style>
+        
+        :root {
+            --tono: 330;
+            --complemento: 190;
+
+            
+            --color-primario: hsla(var(--tono), 100%, 85%, 1);
+            --color-primario-claro: hsla(var(--tono), 100%, 95%, 1);
+            --color-primario-medio: hsla(var(--tono), 100%, 75%, 1);
+            --color-primario-oscuro: hsla(var(--tono), 100%, 65%, 1);
+            --color-sombra-degradado: rgba(255, 105, 180, 0.5);
+            --color-sombra-degradado-dos: rgba(255, 20, 147, 0.3);
+        }
+
+        body {
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 16px;
+        }
+
+        .card {
+            background-color: var(--color-primario);
+            border-radius: 16px;
+            box-shadow: 0px 8px 16px var(--color-sombra-degradado), 0px 8px 30px var(--color-sombra-degradado-dos);
+            width: 320px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            animation: flotabilidad 4s ease-in-out infinite;
+            display: grid;
+            grid-template-rows: auto 1fr auto auto;
+            padding: 16px;
+            gap: 8px;
+        }
+
+        @keyframes flotabilidad {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            border-top-left-radius: 16px;
+            border-top-right-radius: 16px;
+            margin-bottom: 12px;
+        }
+
+        .card h2 {
+            font-size: 1.5rem;
+            color: white;
+            margin: 0;
+        }
+
+        .card p {
+            color: #f5e1e6;
+            font-size: 0.9rem;
+            margin: 8px 0;
+            padding: 0 8px;
+        }
+
+        .card .buttons {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 8px;
+            justify-items: center;
+        }
+
+        .card .btn {
+            display: flex; 
+            align-items: center; 
+            padding: 10px 12px; 
+            border-radius: 30px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            font-size: 0.9rem; 
+            text-align: left;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            width: 100%;
+            height: 40px;
+            position: relative;
+            justify-content: center;
+        }
+
+        .btn-whatsapp {
+            background-color: var(--color-primario-oscuro);
+            color: white;
+        }
+
+        .btn-instagram {
+            background-color: var(--color-primario-claro);
+            color: var(--color-primario);
+            border: 2px solid var(--color-primario);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-instagram:hover {
+            background-color: var(--color-primario);
+            color: white;
+        }
+
+        .btn img {
+            position: absolute;
+            top: 50%; 
+            left: 110px; 
+            width: 20px;
+            height: 20px;
+            transform: translate(-50%, -50%);
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 16px;
+                width: 100%;
+                max-width: 360px;
+            }
+
+            .card img {
+                width: 80%;
+                margin-bottom: 12px;
+            }
+
+            .card h2 {
+                margin-bottom: 8px;
+            }
+
+            .card p {
+                margin-bottom: 12px;
+                padding: 0 12px;
+            }
+
+            .card .buttons {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .btn-whatsapp, .btn-instagram {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <img src="foto/WhatsApp Image 2024-09-27 at 17.13.00.jpeg" alt="Imagen de perfil">
+        <h2>Catalina Perez</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit, temporibus habitasse ullamcorper bibendum sodales.</p>
+        <div class="buttons">
+            <a href="https://wa.me/qr/6VG22RRTUJMRP1" target="_blank" class="btn btn-whatsapp">
+                <img src="foto/whatsapp_1384095.png" alt="WhatsApp Icon">
+                WhatsApp
+            </a>
+            <a href="https://www.instagram.com/_.grim._.ghost._?igsh=YjZkcXNqZTkyZjc1" target="_blank" class="btn btn-instagram">
+                <img src="foto/instagram_15527615.png" alt="Instagram Icon">
+                Instagram
+            </a>
+        </div>
+    </div>
+</body>
+</html>
